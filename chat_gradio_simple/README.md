@@ -4,6 +4,8 @@ This project is a compact example of how to turn an OpenAI chat completion into 
 
 The result is a lightweight chat sandbox that feels much closer to a finished assistant than a terminal loop. You get a browser-based UI, live streaming output, persistent conversation context across turns, and a clean place to experiment with prompt logic.
 
+![Example chat](images/example_chat.png)
+
 ## Why This Script Is Useful
 
 For early chatbot work, the biggest bottleneck is usually not the model call. It is the feedback loop.
@@ -123,7 +125,7 @@ Here is the runtime flow of a single message:
 1. The user types into the Gradio chat box.
 2. Gradio calls `echo(message, history)`.
 3. The script creates a system prompt.
-4. The script optionally augments that prompt if the message mentions `ronstan`.
+4. The script optionally augments that prompt if the message mentions `winch`.
 5. The script rebuilds the full message list from system prompt, prior history, and current user turn.
 6. The script sends that list to the OpenAI chat completions API with streaming enabled.
 7. Partial tokens are yielded back to Gradio.
